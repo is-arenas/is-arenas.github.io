@@ -1,1 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Prueba Diagnóstica 2026-1 | Índice de Programas</title>
+    <style>
+        :root {
+            /* Paleta inspirada en la UMNG: Azul oscuro institucional, Rojo de énfasis */
+            --primary-color: #003366; /* Azul Oscuro */
+            --secondary-color: #f0f0f0; /* Gris muy claro */
+            --emphasis-color: #b30000; /* Rojo */
+            --text-color: #333333; /* Gris oscuro para texto */
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f8f8f8;
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilos de la imagen */
+        .header-image {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header-image img {
+            max-width: 30%; /* Tamaño máximo para que ocupe la mitad del ancho del contenedor */
+            height: auto;
+            display: block; /* Para centrar la imagen */
+            margin: 0 auto; /* Para centrar la imagen dentro del div */
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2.2em;
+            border-bottom: 3px solid var(--emphasis-color); /* Línea roja */
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+        p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        /* Estilo del contenedor principal de la facultad */
+        .faculty-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        /* Estilo del botón/encabezado de la facultad */
+        .faculty-header {
+            background: var(--primary-color); /* Fondo Azul Oscuro */
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ffffff; /* Texto Blanco */
+            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+        }
+        .faculty-header:hover {
+            background-color: #00458a; /* Un tono de azul ligeramente más claro al pasar el mouse */
+        }
+        /* Icono de Toggle */
+        .toggle-icon {
+            font-size: 1em;
+            transition: transform 0.3s;
+            margin-left: 10px;
+            color: #ffcc00; /* Amarillo/Dorado para el icono */
+        }
+        .active .toggle-icon {
+            transform: rotate(90deg);
+            color: var(--emphasis-color); /* Rojo al estar activo */
+        }
+        /* Contenido oculto de los programas */
+        .program-content {
+            padding: 15px 25px;
+            background: var(--secondary-color); /* Fondo Gris Claro */
+            border-top: 1px solid #ccc;
+            display: none;
+        }
+        .program-list {
+            list-style: none; /* Quitamos los puntos por defecto */
+            padding: 0;
+            margin: 5px 0 0 0;
+        }
+        .program-list li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #cccccc;
+        }
+        .program-list li:last-child {
+            border-bottom: none;
+        }
+        .program-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: normal;
+            transition: color 0.2s;
+            display: block;
+            padding-left: 15px; /* Indentación visual */
+            position: relative;
+        }
+        .program-list a::before {
+            content: "•"; /* Usamos un punto para la lista */
+            color: var(--emphasis-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .program-list a:hover {
+            color: var(--emphasis-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-image">
+            <img src="../LOGO_UMNG_LAZOS.png" alt="Logo Universidad Militar Nueva Granada Lazos">
+        </div>
+        <h1>📊 Reporte de la Prueba Diagnóstica 2026-1</h1>
+        
+        <p>
+            El proyecto <strong>LAZOS UMNG</strong> es una iniciativa de acompañamiento académico integral de la Vicerrectoría Académica, esencial para garantizar la <strong>permanencia y graduación</strong> de los estudiantes de pregrado. Una estrategia clave es la prueba diagnóstica en competencias matemáticas (aplicada en WebWork), que evalúa conocimientos alineados con la prueba Saber 11 y establece un punto de referencia crucial en el área. Los reportes generados por facultad y programa detallan el desempeño en tres ejes de competencia: <strong>Interpretación</strong>, <strong>Formulación y Ejecución</strong>, y <strong>Argumentación</strong>. Estos informes permiten a cada programa identificar con precisión las competencias de ingreso para establecer acciones de acompañamiento estudiantil focalizadas. <strong>Haga clic</strong> en el nombre de la facultad para desplegar la lista de sus programas y acceder a los informes individuales.
+        </p>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('bas_cam')">
+              Facultad de Ciencias Básicas y Aplicadas
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="bas_cam" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Bas_CAM/BioApl_Cam.html">BioApl_Cam</a></li>
+                    <li><a href="./Fac_Bas_CAM/MatCom_Cam.html">MatCom_Cam</a></li>
+                    <li><a href="./Fac_Bas_CAM/TecHor_Cam.html">TecHor_Cam</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('dere_bog')">
+                Facultad de Derecho BOG
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="dere_bog" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Dere_BOG/Dere_Bog.html">Dere_Bog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('dere_cam')">
+                Facultad de Derecho CAM
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="dere_cam" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Dere_CAM/Dere_Cam.html">Dere_Cam</a></li>
+                    <li><a href="./Fac_Dere_CAM/TecCri_Cam.html">TecCri_Cam</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('ing_bog')">
+                Facultad de Ingeniería BOG
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="ing_bog" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Ing_BOG/IngCiv_Bog.html">IngCiv_Bog</a></li>
+                    <li><a href="./Fac_Ing_BOG/IngInd_Bog.html">IngInd_Bog</a></li>
+                    <li><a href="./Fac_Ing_BOG/IngMec_Bog.html">IngMec_Bog</a></li>
+                    <li><a href="./Fac_Ing_BOG/IngMul_Bog.html">IngMul_Bog</a></li>
+                    <li><a href="./Fac_Ing_BOG/IngTel_Bog.html">IngTel_Bog</a></li>
+                    <li><a href="./Fac_Ing_BOG/TecCom_Bog.html">TecCom_Bog</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('ing_cam')">
+                Facultad de Ingeniería CAM
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="ing_cam" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Ing_Cam/IngAmb_Cam.html">IngAmb_Cam</a></li>
+                    <li><a href="./Fac_Ing_Cam/IngBio_Cam.html">IngBio_Cam</a></li>
+                    <li><a href="./Fac_Ing_Cam/IngCiv_Cam.html">IngCiv_Cam</a></li>
+                    <li><a href="./Fac_Ing_Cam/IngInd_Cam.html">IngInd_Cam</a></li>
+                    <li><a href="./Fac_Ing_Cam/IngMec_Cam.html">IngMec_Cam</a></li>
+                    <li><a href="./Fac_Ing_Cam/IngMul_Cam.html">IngMul_Cam</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('fac_med')">
+                Facultad de Medicina
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="fac_med" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Med/Medi_Bog.html">Medi_Bog</a></li>
+                    <li><a href="./Fac_Med/TecPre_Cam.html">TecPre_Cam</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('ries_bog')">
+              Facultad de Relaciones Internacionales, Seguridad y Estrategia BOG
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="ries_bog" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Ries_BOG/AdmTra_Bog.html">AdmTra_Bog</a></li>
+                    <li><a href="./Fac_Ries_BOG/RelPol_Bog.html">RelPol_Bog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('ries_cam')">
+              Facultad de Relaciones Internacionales, Seguridad y Estrategia CAM
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="ries_cam" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Ries_CAM/AdmTra_Cam.html">AdmTra_Cam</a></li>
+                    <li><a href="./Fac_Ries_CAM/RelPol_Cam.html">RelPol_Cam</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('soc_eco_bog')">
+              Facultad de Ciencias Económicas BOG
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="soc_eco_bog" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Soc_Eco_BOG/AdmEmp_Bog.html">AdmEmp_Bog</a></li>
+                    <li><a href="./Fac_Soc_Eco_BOG/ConPub_Bog.html">ConPub_Bog</a></li>
+                    <li><a href="./Fac_Soc_Eco_BOG/Econ_Bog.html">Econ_Bog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('soc_eco_cam')">
+              Facultad de Ciencias Económicas CAM
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="soc_eco_cam" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./Fac_Soc_Eco_CAM/AdmEmp_Cam.html">AdmEmp_Cam</a></li>
+                    <li><a href="./Fac_Soc_Eco_CAM/ConPub_Cam.html">ConPub_Cam</a></li>
+                    <li><a href="./Fac_Soc_Eco_CAM/Econ_Cam.html">Econ_Cam</a></li>
+                    <li><a href="./Fac_Soc_Eco_CAM/TecTri_Cam.html">TecTri_Cam</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faculty-item">
+            <div class="faculty-header" onclick="togglePrograms('faedis')">
+              Facultad de Educación a Distancia
+                <span class="toggle-icon">▶</span>
+            </div>
+            <div id="faedis" class="program-content">
+                <ul class="program-list">
+                    <li><a href="./FAEDIS/AdmEmp_BEC.html">AdmEmp_BEC</a></li>
+                    <li><a href="./FAEDIS/AdmEmp_DIS.html">AdmEmp_DIS</a></li>
+                    <li><a href="./FAEDIS/AdmTra_BEC.html">AdmTra_BEC</a></li>
+                    <li><a href="./FAEDIS/AdmTra_DIS.html">AdmTra_DIS</a></li>
+                    <li><a href="./FAEDIS/ConPub_BEC.html">ConPub_BEC</a></li>
+                    <li><a href="./FAEDIS/ConPub_DIS.html">ConPub_DIS</a></li>
+                    <li><a href="./FAEDIS/IngCiv_BEC.html">IngCiv_BEC</a></li>
+                    <li><a href="./FAEDIS/IngCiv_DIS.html">IngCiv_DIS</a></li>
+                    <li><a href="./FAEDIS/IngInd_BEC.html">IngInd_BEC</a></li>
+                    <li><a href="./FAEDIS/IngInd_DIS.html">IngInd_DIS</a></li>
+                    <li><a href="./FAEDIS/IngInf_BEC.html">IngInf_BEC</a></li>
+                    <li><a href="./FAEDIS/IngInf_DIS.html">IngInf_DIS</a></li>
+                    <li><a href="./FAEDIS/RelPol_BEC.html">RelPol_BEC</a></li>
+                    <li><a href="./FAEDIS/RelPol_DIS.html">RelPol_DIS</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function togglePrograms(id) {
+            const content = document.getElementById(id);
+            const header = content.previousElementSibling;
+            
+            // Si está oculto, lo muestra. Si está visible, lo oculta.
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                header.classList.remove('active');
+            } else {
+                // Ocultar otros divs abiertos para que solo uno esté activo a la vez
+                const allContents = document.querySelectorAll('.program-content');
+                allContents.forEach(item => {
+                    if (item.id !== id && item.style.display === "block") {
+                        item.style.display = "none";
+                        item.previousElementSibling.classList.remove('active');
+                    }
+                });
+
+                // Muestra el div actual y activa el estilo del encabezado
+                content.style.display = "block";
+                header.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
 
